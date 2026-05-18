@@ -49,63 +49,7 @@ bun run inventory
 
 ## Methodology
 
-The common thread is simple: skills turn good agent behavior into repeatable operating procedure. I do not want a model to improvise every time it hits a known class of work. I want it to load the right playbook, preserve context, gather evidence, and ship with verification.
-
-### 1. Start From A Named Workflow
-
-Good AI work starts by choosing the right mode. A bug is not a feature spec. A security question is not a vibe check. A PRD is not an implementation plan.
-
-The skills encode this as named workflows: `diagnose`, `tdd`, `triage`, `to-prd`, `to-issues`, `oracle`, `security-scan`, `github`, `frontend-app-builder`, and so on. Naming the workflow makes the agent less likely to collapse everything into generic coding.
-
-### 2. Prefer Evidence Over Plausibility
-
-The strongest skills here bias toward real signals:
-
-- reproduce the bug before fixing it
-- inspect the actual checkout before judging the architecture
-- run the build, tests, CI, browser, or device flow where possible
-- verify live docs or current product behavior when the answer may have drifted
-- report verification gaps instead of smoothing them over
-
-This is why many skills are procedural. The procedure is not bureaucracy; it is a way to keep the model attached to the world.
-
-### 3. Work In Vertical Slices
-
-The implementation style I want is tracer bullets and tight feedback loops:
-
-1. Define the smallest behavior that proves the direction.
-2. Build or test that behavior end to end.
-3. Learn from the result.
-4. Repeat.
-
-This shows up in the TDD, PRD, issue-writing, and prototype skills. The goal is not maximal ceremony. The goal is to keep work independently reviewable and runnable.
-
-### 4. Let Domain Language Shape The Code
-
-Several skills push the agent to read `CONTEXT.md`, ADRs, issue labels, and local docs before making architectural claims. That reflects a strong preference: code should be understood through the domain's vocabulary, not through generic "service/component/helper" mush.
-
-When the language is fuzzy, the agent should sharpen it. When the code disagrees with the docs, the agent should say so. When a decision matters long-term, it should become an ADR or issue, not an invisible chat assumption.
-
-### 5. Use External Tools As Reality Checks
-
-This repo includes skills for browser automation, GitHub, Linear, Slack, Google Drive, Supabase, Vercel, Android, iOS, documents, spreadsheets, and presentations. The pattern is the same: use the system of record when it exists.
-
-The `oracle` skill adds another kind of reality check: bundle the right files and prompt for a separate high-context review. It is a way to get a second model pass without losing the concrete file set.
-
-### 6. Keep Skill Context Lean
-
-The best skills are concise entrypoints with progressive disclosure. They should explain the workflow, point to scripts or references only when needed, and avoid dumping every possible fact into context. A skill is not a textbook. It is a specialized operating guide.
-
-### 7. Preserve Human Intent
-
-The skills are not there to replace judgment. They are there to make judgment less forgetful. They help the agent remember things like:
-
-- ask one good question when the decision tree is unclear
-- keep accepted scope splits intact
-- credit upstream work
-- avoid destructive git operations
-- prefer the user's actual repo and runtime over generic advice
-- finish with a clear account of what was verified
+My AI methodology is to treat skills as executable playbooks: pick the named workflow, gather evidence from the real source of truth, preserve the user's constraints and accepted scope splits, work in small runnable slices, verify before claiming completion, and credit the upstream projects that make the workflow possible. The full methodology, including accumulated lessons and references, lives in [METHODOLOGY.md](./METHODOLOGY.md).
 
 ## Personal Skills
 
