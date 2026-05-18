@@ -177,6 +177,81 @@ Before finishing:
 - Link the changed files or resulting artifacts.
 - Push only intentional scope.
 
+## External Sources To Explore
+
+These are external articles, talks, docs, repos, and reference lists that shaped the methodology above. They are not all direct code dependencies. Treat them as the wider reading trail behind the operating model.
+
+### Core Agent Methodology
+
+| Source | Link | Why it matters |
+| --- | --- | --- |
+| z80 methodology thread | [x.com/0xz80](https://x.com/0xz80/status/2048736124328104326) | GPT Pro planning, Codex execution, worklogs, PR splitting, and subagent review loops for large work. |
+| Matt Pocock, "Software Fundamentals Matter More Than Ever" | [YouTube](https://www.youtube.com/watch?v=v4F1gFy-hqg) | Engineering fundamentals as the antidote to AI-compounded codebase entropy. |
+| Andrej Karpathy, "From Vibe Coding to Agentic Engineering" | [YouTube](https://www.youtube.com/watch?v=96jN2OCOfLs) | The shift from unverified vibe coding to verifier-grounded agentic engineering. |
+| Mario Zechner, "Building pi in a World of Slop" | [YouTube](https://www.youtube.com/watch?v=RjfbvDXpFls) | Minimal, observable, self-modifiable harnesses and the human discipline layer needed around agents. |
+| Addy Osmani, "Agent Harness Engineering" | [X article](https://x.com/addyosmani/status/2053231239721885918) | The "agent = model + harness" frame and the rule that every harness rule should trace to a real failure. |
+| Petra Donka, "Agents Need Feedback Loops, Not Perfect Prompts" | [X article](https://x.com/petradonka/status/2054897826149101588) | Feedback loops, principles-not-rules, and PR-reviewed self-improvement for judgment-heavy agents. |
+| Nader Dabit, "Agent Hooks: Deterministic Control for Agent Workflows" | [X article](https://x.com/dabit3/status/2055319214202777894), [GitHub](https://github.com/dabit3/agent-hooks-in-depth), [demo repo](https://github.com/dabit3/agent-hooks-in-depth/tree/main/agent-hooks-demo) | The hooks layer: move always/never/run/verify behavior out of model memory and into deterministic lifecycle checks. |
+| goodalexander, "Ramping Your Coding Output with OpenAI's Codex" | [X article](https://x.com/goodalexander/status/2053573659235602645) | Solo-operator lessons for long-running Codex work, model routing, cleanup passes, and ROI framing. |
+| Hermes Agent | [YouTube](https://www.youtube.com/watch?v=NvakBZyc1Sg), [docs](https://hermes-agent.nousresearch.com/docs/) | Self-hosted, always-on agent runtime with profiles, memory, skills, cron, Kanban, and MCP surfaces. |
+| Oracle pattern | [steipete/oracle](https://github.com/steipete/oracle), [aniketpanjwani oracle skill](https://github.com/aniketpanjwani/skills/blob/main/skills/general/oracle/SKILL.md) | Bundle the right local context and route hard reasoning to a stronger external model. |
+
+### Background Agents And Agentic SDLC
+
+| Source | Link | Why it matters |
+| --- | --- | --- |
+| background-agents.com | [background-agents.com](https://background-agents.com/) | The "background agents" thesis: org-level software automation needs cloud runtime, governance, and fleet coordination. |
+| Background Agents Summit | [summit](https://background-agents.com/summit) | Talks and operator context for infra, security, and leadership around background agents. |
+| Background Agents Tool Landscape | [landscape](https://background-agents.com/landscape/) | Market map across interfaces, sandboxes, orchestration, security, review, agents, benchmarks, and standards. |
+| Ona whitepapers | [ona.com/whitepapers](https://ona.com/whitepapers) | Agentic SDLC references on background agents, platform engineering, governance, and secure AI-native development. |
+| Spotify background coding agent | [Part 1](https://engineering.atspotify.com/2025/11/spotifys-background-coding-agent-part-1) | Operating an internal background coding agent across many production PRs. |
+| Spotify context engineering | [Part 2](https://engineering.atspotify.com/2025/11/context-engineering-background-coding-agents-part-2) | How repo selection, pruning, retrieval, and context design affect background-agent reliability. |
+| Spotify feedback loops | [Part 3](https://engineering.atspotify.com/2025/12/feedback-loops-background-coding-agents-part-3) | Tests, evals, and CI signals as predictability levers for background agents. |
+| Spotify Backstage Honk | [Backstage article](https://backstage.spotify.com/how-spotify-built-honk) | Background agents integrated into internal developer portals. |
+| Stripe Minions | [Part 1](https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents), [Part 2](https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2) | One-shot, end-to-end coding agents at monorepo scale. |
+| Ramp background agent | [builders.ramp.com](https://builders.ramp.com/post/why-we-built-our-background-agent) | Build-vs-buy and org-design rationale for internal background agents. |
+| Ramp Inspect architecture | [Rahul GS thread](https://x.com/rahulgs/status/2016284233438793793) | Architecture reference for Ramp's background-agent platform. |
+| Ramp Sheets self-maintenance | [Ramp Labs thread](https://x.com/RampLabs/status/2036165188899012655) | Scheduled and event-driven agents for continuous product maintenance. |
+| Ramp adoption playbook | [Geoff Charles thread](https://x.com/geoffintech/status/2042002590758572377) | Cultural and managerial patterns for getting an engineering org to adopt agents. |
+| Uber AI development | [Pragmatic Engineer](https://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development) | Large-org AI development rollout and agent-ready developer-platform lessons. |
+| Harvey Spectre | [harvey.ai](https://www.harvey.ai/blog/building-spectre-internal-collaborative-cloud-agent-platform) | Collaborative cloud agent platform for a domain-heavy engineering org. |
+| OpenAI Harness Engineering | [openai.com](https://openai.com/index/harness-engineering/) | Harness engineering as the scaffolding around Codex and agent-first development. |
+| Cursor self-driving codebases | [cursor.com](https://cursor.com/blog/self-driving-codebases) | Long-running agents and self-maintaining codebase framing. |
+| Cursor long-running agents | [cursor.com](https://cursor.com/blog/long-running-agents) | Reliability and cost notes for minutes-to-hours cloud agents. |
+| Simon Willison on StrongDM | [simonwillison.net](https://simonwillison.net/2026/Feb/7/software-factory/) | A cautionary/observational case of serious software built through agent-heavy workflows. |
+
+### Research, Verification, Identity, And Context
+
+| Source | Link | Why it matters |
+| --- | --- | --- |
+| Memento: Teaching LLMs to Manage Their Own Context | [thread](https://x.com/DimitrisPapail/status/2041974013950373901), [paper](https://github.com/microsoft/memento/blob/main/docs/memento.pdf), [dataset](https://huggingface.co/datasets/microsoft/OpenMementos), [code](https://github.com/microsoft/memento) | Learned context management, compression, KV-cache reduction, and selective forgetting as an agent skill. |
+| Timour Kosters, "AI Agents as Coordination Technology" | [At The Edges](https://attheedges.timour.xyz/p/ai-agents-as-coordination-technology) | Agents as civic and organizational coordination infrastructure, not just personal copilots. |
+| Vitalik Buterin, "A Shallow Dive into Formal Verification" | [vitalik.eth.limo](https://vitalik.eth.limo/general/2026/05/18/fv.html) | AI-assisted software as "LLM proposes, deterministic checker verifies," especially for security-critical systems. |
+| Benjamin Fels, "The Feature" | [X article](https://x.com/benjamintfels/status/2056307684622696836) | AI deception/fraud framing and the case for physical-world ground truth and proof of personhood. |
+| cyber-Fund, "The Monastery for AI-Native Founders" | [Notion](https://www.notion.so/cyber-Fund-The-Monastery-for-AI-Native-Founders-3514e3a6b4af800b95ffeca0e967c7ed) | AI-native organization design, founder intensity, and agentic operating-company framing. |
+| Karpathy LLM Wiki pattern | [gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) | The Obsidian/vault methodology backbone: raw sources, wiki summaries, concepts, entities, explorations, and logs. |
+
+### Hooks, Security, Standards, And Evaluation
+
+| Source | Link | Why it matters |
+| --- | --- | --- |
+| Claude Code hooks guide | [code.claude.com](https://code.claude.com/docs/en/hooks-guide) | Practical hook setup for lifecycle enforcement. |
+| Claude Code hooks reference | [code.claude.com](https://code.claude.com/docs/en/hooks) | Event and schema reference for Claude Code hooks. |
+| Devin hooks overview | [cli.devin.ai](https://cli.devin.ai/docs/extensibility/hooks/overview) | Cross-runtime hook concepts for Devin for Terminal. |
+| Devin lifecycle hooks | [cli.devin.ai](https://cli.devin.ai/docs/extensibility/hooks/lifecycle-hooks) | Lifecycle-event reference for Devin hooks. |
+| OpenAI Codex hooks | [developers.openai.com](https://developers.openai.com/codex/hooks) | Codex hook support for policy, validation, and completion gates. |
+| Cursor hooks | [cursor.com](https://cursor.com/docs/hooks) | Cursor hook documentation. |
+| Cursor CLI | [cursor.com](https://cursor.com/cli) | CLI surface relevant to agent workflow automation. |
+| MCP Security Best Practices | [modelcontextprotocol.io](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices) | Official MCP security posture for tool and server integrations. |
+| OWASP MCP Security Cheat Sheet | [cheatsheetseries.owasp.org](https://cheatsheetseries.owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html) | Practical security checklist for MCP deployments. |
+| GitHub artifact attestations | [docs.github.com](https://docs.github.com/actions/security-for-github-actions/using-artifact-attestations) | Provenance and supply-chain verification for generated artifacts. |
+| GitHub OIDC | [docs.github.com](https://docs.github.com/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect) | Short-lived credential flow for CI/CD and agent-adjacent automation. |
+| npm trusted publishing | [docs.npmjs.com](https://docs.npmjs.com/trusted-publishers) | Trusted publishing pattern for npm packages. |
+| crates.io trusted publishing | [doc.rust-lang.org](https://doc.rust-lang.org/cargo/reference/registry-authentication.html#trusted-publishing) | Trusted publishing pattern for Rust crates. |
+| cargo vet | [mozilla.github.io](https://mozilla.github.io/cargo-vet/) | Supply-chain audit tooling for Rust dependencies. |
+| SLSA provenance spec | [slsa.dev](https://slsa.dev/spec/v1.0/provenance) | Provenance format and supply-chain assurance reference. |
+| Trail of Bits Claude Code skill ecosystem | [trailofbits.com](https://blog.trailofbits.com/) | Security-minded agent customization, skills, and devcontainer patterns. |
+
 ## References And Credits
 
 Credit belongs to the upstream authors and maintainers. This repo is a local snapshot plus my synthesis of how I use these skills.
