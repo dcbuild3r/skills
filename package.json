@@ -1,0 +1,9 @@
+{
+  "name": "ai-skills-curator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "curate": "node scripts/skill-curator-server.mjs",
+    "inventory": "node scripts/write-scripts-md.mjs"
+  }
+}

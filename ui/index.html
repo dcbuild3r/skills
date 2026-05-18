@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skill Curator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>Skill Curator</h1>
+          <p>Review the local dump, keep only what belongs in the public repo, and prepare a clean upload set.</p>
+        </div>
+        <div class="topbar-actions">
+          <button id="saveSelection" class="secondary">Save</button>
+          <button id="buildUpload" class="primary">Build Upload Preview</button>
+          <button id="applySelection" class="danger">Apply To Working Tree</button>
+        </div>
+      </header>
+
+      <section class="stats" aria-label="Selection summary">
+        <div><span id="totalSkills">0</span><label>Total skills</label></div>
+        <div><span id="keepCount">0</span><label>Keep</label></div>
+        <div><span id="removeCount">0</span><label>Remove</label></div>
+        <div><span id="unreviewedCount">0</span><label>Unreviewed</label></div>
+        <div><span id="scriptCount">0</span><label>Scripts</label></div>
+      </section>
+
+      <section class="controls" aria-label="Filters and bulk actions">
+        <label class="search">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="skill, source, description, script path" />
+        </label>
+        <label>
+          <span>Source</span>
+          <select id="areaFilter"></select>
+        </label>
+        <label>
+          <span>Status</span>
+          <select id="statusFilter">
+            <option value="all">All statuses</option>
+            <option value="unreviewed">Unreviewed</option>
+            <option value="keep">Keep</option>
+            <option value="remove">Remove</option>
+          </select>
+        </label>
+        <label class="checkbox">
+          <input id="scriptsOnly" type="checkbox" />
+          <span>Has scripts</span>
+        </label>
+        <div class="bulk-actions">
+          <button id="keepVisible" class="secondary">Keep Visible</button>
+          <button id="removeVisible" class="secondary">Remove Visible</button>
+          <button id="clearVisible" class="secondary">Clear Visible</button>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <section class="skill-pane" aria-label="Skill list">
+          <div class="pane-header">
+            <h2>Skills</h2>
+            <span id="visibleCount">0 visible</span>
+          </div>
+          <div id="skillList" class="skill-list"></div>
+        </section>
+
+        <aside class="detail-pane" aria-label="Selected skill details">
+          <div class="pane-header">
+            <h2>Details</h2>
+            <button id="refreshData" class="secondary small">Refresh</button>
+          </div>
+          <div id="detailContent" class="detail-content">
+            <p>Select a skill to inspect its files and scripts.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="scripts-pane" aria-label="Scripts inventory">
+        <div class="pane-header">
+          <h2>Scripts</h2>
+          <span id="scriptsVisibleCount">0 listed</span>
+        </div>
+        <div id="scriptList" class="script-list"></div>
+      </section>
+
+      <section id="statusLog" class="status-log" aria-live="polite"></section>
+    </main>
+
+    <dialog id="applyDialog">
+      <form method="dialog">
+        <h2>Apply selection to the working tree?</h2>
+        <p>This removes every skill marked <strong>Remove</strong> from <code>skills/</code>. The upload preview is safer if you only want to inspect the result first.</p>
+        <div class="dialog-actions">
+          <button value="cancel" class="secondary">Cancel</button>
+          <button id="confirmApply" value="apply" class="danger">Remove Unselected Skills</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
