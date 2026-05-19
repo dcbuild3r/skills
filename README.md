@@ -60,6 +60,7 @@ These are the skills installed directly under `~/.agents/skills` and copied into
 | `caveman` | Matt Pocock | Ultra-compressed communication mode. |
 | `diagnose` | Matt Pocock | Disciplined bug and performance diagnosis. |
 | `find-skills` | Vercel Labs | Discover and install skills from the wider ecosystem. |
+| `grok` | Dominik Clemente | Ask xAI Grok inside an authenticated x.com Chrome session for X-native research (who-works-where, recent posts, thread distillation). |
 | `grill-me` | Matt Pocock | Interrogate a plan until the decision tree is clear. |
 | `grill-with-docs` | Matt Pocock | Stress-test plans against domain docs and ADRs. |
 | `improve-codebase-architecture` | Matt Pocock | Find deepening opportunities in a codebase. |
